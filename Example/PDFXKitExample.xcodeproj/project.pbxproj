@@ -9,15 +9,12 @@
 /* Begin PBXBuildFile section */
 		842147D524F98AFE00B939BC /* PDFXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842147CF24F98A7800B939BC /* PDFXKit.framework */; };
 		842147D624F98AFE00B939BC /* PDFXKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 842147CF24F98A7800B939BC /* PDFXKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8472F617251BC567003A22AB /* PSPDFKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8472F616251BC567003A22AB /* PSPDFKit */; };
 		84B3755A23F8857700844C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B3755823F8857700844C6C /* Main.storyboard */; };
 		84B3755C23F8857800844C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3755B23F8857800844C6C /* Assets.xcassets */; };
 		84B3755F23F8857800844C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B3755D23F8857800844C6C /* LaunchScreen.storyboard */; };
 		84B3756923F885DE00844C6C /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3756723F885DE00844C6C /* AppController.swift */; };
 		84B3756A23F885DE00844C6C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3756823F885DE00844C6C /* MainController.swift */; };
-		84B3757223F8863400844C6C /* PSPDFKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3757023F8863400844C6C /* PSPDFKit.xcframework */; };
-		84B3757323F8863400844C6C /* PSPDFKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3757023F8863400844C6C /* PSPDFKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		84B3757423F8863400844C6C /* PSPDFKitUI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3757123F8863400844C6C /* PSPDFKitUI.xcframework */; };
-		84B3757523F8863400844C6C /* PSPDFKitUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3757123F8863400844C6C /* PSPDFKitUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		84B3757723F8865300844C6C /* PDFs in Resources */ = {isa = PBXBuildFile; fileRef = 84B3757623F8865300844C6C /* PDFs */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +42,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				84B3757523F8863400844C6C /* PSPDFKitUI.xcframework in Embed Frameworks */,
-				84B3757323F8863400844C6C /* PSPDFKit.xcframework in Embed Frameworks */,
 				842147D624F98AFE00B939BC /* PDFXKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -75,9 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B3757423F8863400844C6C /* PSPDFKitUI.xcframework in Frameworks */,
-				84B3757223F8863400844C6C /* PSPDFKit.xcframework in Frameworks */,
 				842147D524F98AFE00B939BC /* PDFXKit.framework in Frameworks */,
+				8472F617251BC567003A22AB /* PSPDFKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +147,9 @@
 			dependencies = (
 			);
 			name = PDFXKitExample;
+			packageProductDependencies = (
+				8472F616251BC567003A22AB /* PSPDFKit */,
+			);
 			productName = PDFXKitExample;
 			productReference = 84B3754F23F8857700844C6C /* PDFXKitExample.app */;
 			productType = "com.apple.product-type.application";
@@ -182,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 84B3754623F8857700844C6C;
+			packageReferences = (
+				8472F615251BC567003A22AB /* XCRemoteSwiftPackageReference "pspdfkit-sp" */,
+			);
 			productRefGroup = 84B3755023F8857700844C6C /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -457,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8472F615251BC567003A22AB /* XCRemoteSwiftPackageReference "pspdfkit-sp" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pspdfkit/pspdfkit-sp.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8472F616251BC567003A22AB /* PSPDFKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8472F615251BC567003A22AB /* XCRemoteSwiftPackageReference "pspdfkit-sp" */;
+			productName = PSPDFKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84B3754723F8857700844C6C /* Project object */;
 }
